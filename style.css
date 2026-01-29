@@ -1,0 +1,134 @@
+/* --- 1. Root Variables & Reset --- */
+:root {
+    --primary-blue: #0a192f;   /* Biru Gelap untuk kesan profesional */
+    --accent-blue: #112240;    /* Biru sedikit lebih terang untuk elemen pendukung */
+    --text-light: #e6f1ff;     /* Putih kebiruan untuk teks agar tidak terlalu kontras */
+    --white: #ffffff;
+    --gray: #8892b0;
+}
+
+* {
+    margin: 0;                 /* Menghapus jarak bawaan browser */
+    padding: 0;                /* Menghapus ruang dalam bawaan browser */
+    box-sizing: border-box;    /* Memastikan padding tidak merusak ukuran elemen */
+    font-family: 'Segoe UI', sans-serif; /* Menggunakan font yang modern dan bersih */
+}
+
+body {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    line-height: 1.6;          /* Memberikan ruang antar baris agar teks mudah dibaca */
+}
+
+/* --- 2. Navigasi --- */
+nav {
+    background-color: var(--primary-blue);
+    padding: 1rem 5%;          /* Memberikan jarak atas-bawah dan samping */
+    display: flex;             /* Mengaktifkan mode flexbox */
+    justify-content: space-between; /* Memisahkan logo dan menu ke kiri-kanan */
+    align-items: center;       /* Menyejajarkan elemen secara vertikal */
+    position: sticky;          /* Membuat navigasi tetap di atas saat scroll */
+    top: 0;
+    z-index: 1000;             /* Memastikan navigasi selalu berada di lapisan paling depan */
+}
+
+nav ul {
+    display: flex;             /* Menu berjajar secara horizontal */
+    list-style: none;          /* Menghapus titik (bullet) pada list */
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;     /* Menghapus garis bawah pada link */
+    margin-left: 2rem;         /* Jarak antar menu */
+    transition: 0.3s;          /* Efek transisi halus saat hover */
+}
+
+nav ul li a:hover {
+    color: #64ffda;            /* Warna berubah saat kursor diarahkan */
+}
+
+/* --- 3. Hero Section --- */
+#hero {
+    height: 80vh;              /* Tinggi bagian hero 80% dari tinggi layar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9));
+    color: var(--white);
+}
+
+/* --- 4. About Section --- */
+.container {
+    padding: 80px 10%;         /* Memberikan ruang kosong yang luas di sisi kiri dan kanan */
+}
+
+.about-content {
+    max-width: 800px;          /* Membatasi lebar teks agar nyaman dibaca */
+    margin: 0 auto;            /* Membuat posisi konten berada di tengah */
+}
+
+/* --- 5. Proyek (Grid) --- */
+.proyek-grid {
+    display: grid;             /* Menggunakan sistem grid untuk tata letak */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Membuat kolom otomatis sejajar & responsif */
+    gap: 20px;                 /* Jarak antar kartu proyek */
+    margin-top: 30px;
+}
+
+.proyek-card {
+    background: var(--white);
+    border: 1px solid #e2e8f0; /* Garis tipis untuk memisahkan kartu */
+    border-radius: 10px;       /* Membuat sudut kartu melengkung */
+    overflow: hidden;          /* Memastikan gambar tidak keluar dari lengkungan kartu */
+    text-decoration: none;     /* Menghapus garis bawah link */
+    color: inherit;
+    transition: transform 0.3s; /* Efek gerak saat kartu disentuh mouse */
+}
+
+.proyek-card:hover {
+    transform: translateY(-10px); /* Kartu sedikit naik saat hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Bayangan halus agar terlihat menonjol */
+}
+
+.proyek-card img {
+    width: 100%;               /* Gambar menyesuaikan lebar kartu */
+    height: 200px;
+    object-fit: cover;         /* Gambar tidak gepeng (crop otomatis) */
+}
+
+.proyek-info {
+    padding: 20px;             /* Ruang di dalam kartu agar teks tidak menempel ke pinggir */
+}
+
+/* --- 6. Media Sosial --- */
+.medsos-list {
+    display: flex;             /* Menyusun ikon medsos secara horizontal */
+    justify-content: center;   /* Posisi di tengah layar */
+    gap: 30px;                 /* Jarak antar ikon medsos */
+    margin-top: 20px;
+}
+
+.medsos-item {
+    display: flex;
+    flex-direction: column;    /* Teks berada di bawah ikon */
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-blue);
+}
+
+.medsos-item img {
+    width: 40px;               /* Mengatur ukuran ikon medsos */
+    margin-bottom: 8px;
+}
+
+/* --- 7. Footer --- */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;        /* Teks hak cipta di tengah */
+    padding: 40px 0;           /* Memberikan ruang tinggi pada footer */
+    margin-top: 50px;
+}
